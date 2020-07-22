@@ -30,7 +30,7 @@ func GetTopic(url *url.URL) string {
 func Connect(opts *mqtt.ClientOptions) mqtt.Client {
 	client := mqtt.NewClient(opts)
 	token := client.Connect()
-	for !token.WaitTimeout(3 * time.Second) {
+	for !token.WaitTimeout(1 * time.Second) {
 	}
 	if err := token.Error(); err != nil {
 		log.Fatal(err)
